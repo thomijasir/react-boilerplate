@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  }
+}
+// {
+//   "compilerOptions": {
+//     // No module system, concatenated file
+//     "module": "esnext",
+//     // Set React as the JSX factory
+//     "jsx": "react",
+//     // Resolve modules using Node-resolution algorithm
+//     // "moduleResolution": "node",
+//     // Target ES5 for more modern browsers
+//     "target": "es5",
+//     // Include typings from built-in lib declarations
+//     "lib": [
+//       "es2015",
+//       "dom",
+//       "dom.iterable",
+//       "esnext"
+//     ],
+//     // Include module source maps for debugging
+//     "sourceMap": true,
+//     "allowJs": true,
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true,
+//     "forceConsistentCasingInFileNames": true,
+//     // "resolveJsonModule": true,
+//     "isolatedModules": false,
+//     "noEmit": true,
+//   },
+//   "include": [
+//     "src"
+//   ]
+// }
