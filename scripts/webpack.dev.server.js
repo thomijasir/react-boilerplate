@@ -27,15 +27,10 @@ const options = {
   liveReload: false,
   // Port Listening
   port: "auto",
-  // Message on listening port
-  onListening: function (devServer) {
-    if (!devServer) {
-      throw new Error("webpack-dev-server is not defined");
-    }
-    console.log(`Running on: http://${Host}:${Port}\n`);
-  },
 };
 // Compiler & Serve Service
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, options);
-server.listen(Port, Host, () => {});
+server.listen(Port, Host, () => {
+  process.stdout.write(`dev server is running: http://${Host}:${Port}\n`);
+});

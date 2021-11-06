@@ -1,15 +1,34 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
-    "module": "es6",
+    "module": "esnext",
     "target": "es5",
+    "lib": [
+            "es2015",
+            "dom",
+            "dom.iterable",
+            "esnext"
+          ],
     "jsx": "react",
     "allowJs": true,
     "sourceMap": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "newLine": "LF",
+    // "typeRoots": [
+    //   "node_modules/@types",
+    // ]
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    ".git",
+    "node_modules"
+  ]
 }
 // {
 //   "compilerOptions": {
