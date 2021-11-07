@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Snap Test render() renders the component 1`] = `
+<div
+  className="home-page"
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-12"
+      >
+        <img
+          alt="react-logo"
+          className="rotate"
+          src="react.svg"
+        />
+        <h1>
+          React Boilerplate
+        </h1>
+        <p>
+          This template project was designed for easy scalability apps.
+        </p>
+        <small>
+          Architecture by Thomi Jasir
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+`;

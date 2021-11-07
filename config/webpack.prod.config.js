@@ -1,8 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
-const paths = require('./paths');
+const paths = require('../scripts/paths');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -37,14 +36,14 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            // options: {
-            //   discardDuplicates: true,
-            //   importLoaders: 1,
-            //   // This enables local scoped CSS based in CSS Modules spec
-            //   modules: true,
-            //   // generates a unique name for each class (e.g. app__app___2x3cr)
-            //   // localIdentName: "[name]__[local]___[hash:base64:5]",
-            // },
+            options: {
+              discardDuplicates: true,
+              importLoaders: 1,
+              // This enables local scoped CSS based in CSS Modules spec
+              modules: true,
+              // generates a unique name for each class (e.g. app__app___2x3cr)
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+            },
           },
           {
             loader: 'sass-loader',
@@ -72,11 +71,15 @@ module.exports = {
     },
   },
   plugins: [
-    new Dotenv(),
     new HtmlWebPackPlugin({
       template: paths.appHtml,
       inject: true,
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+      },
+    }),
   ],
 };
