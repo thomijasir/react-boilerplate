@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
-const config = require('./webpack.dev.config');
+const config = require('../config/webpack.dev.config');
 
 // Change port to suit your preference
 const Port = 8888;

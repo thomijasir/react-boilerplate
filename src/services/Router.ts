@@ -1,5 +1,5 @@
 import { RouteProps } from 'react-router-dom';
-import HomePage from '../containers/Home/Home.page';
+import HomeContainer from '../containers/Home/Home.container';
 
 interface IRoute extends RouteProps {
   key: number;
@@ -13,7 +13,7 @@ const Routes: Array<IRoute> = [
     key: 1,
     path: '/',
     exact: true,
-    element: HomePage,
+    element: HomeContainer,
   },
 ];
 
