@@ -1,10 +1,10 @@
-const webpack = require("webpack");
-const WebpackDevServer = require("webpack-dev-server");
-const config = require("./webpack.dev.config");
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+const config = require('./webpack.dev.config');
 
 // Change port to suit your preference
 const Port = 8888;
-const Host = "localhost";
+const Host = 'localhost';
 // Options Dev Servers
 const options = {
   // Open To Browser
@@ -19,14 +19,14 @@ const options = {
       errors: true,
       warnings: false,
     },
-    logging: "info",
+    logging: 'info',
     progress: true,
     reconnect: true,
   },
   // Reload On Live Disable For Fast Development
   liveReload: false,
   // Port Listening
-  port: "auto",
+  port: 'auto',
 };
 // Compiler & Serve Service
 const compiler = webpack(config);
