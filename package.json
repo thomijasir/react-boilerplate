@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "node-version": "16.13.0",
   "description": "react-boilerplate by thomi jasir",
   "main": "index.js",
@@ -24,17 +24,20 @@
     ]
   },
   "scripts": {
-    "buildx": "npm run clean; webpack --config config/webpack-prod-config.js",
+    "build": "npm run clean; webpack --config config/webpack-prod-config.js",
     "clean": "rm -rf build/*",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=development",
-    "watch": "webpack -w",
-    "devx": "webpack-dev-server --config scripts/webpack.dev.config.js --mode=development --open --hot",
     "dev": "node scripts/webpack.dev.server.js",
-    "analyze": "source-map-explorer build/static/js/main.*",
+    "analyze": "source-map-explorer dist/*.js",
+    "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
     "lint": "eslint src --ext .js --ext .jsx --ext .ts --ext .tsx",
     "lint:fix": "eslint src --ext .js --ext .jsx --ext .ts --ext .tsx --fix",
-    "format": "prettier --write \"{,!(node_modules)/**/}*.js\""
+    "web:build": "webpack --mode=development",
+    "web:watch": "webpack -w",
+    "web:dev": "webpack-dev-server --config scripts/webpack.dev.config.js --mode=development --open --hot",
+    "v:patch": "npm version patch --no-git-tag-version",
+    "v:minor": "npm version minor --no-git-tag-version",
+    "v:major": "npm version major --no-git-tag-version"
   },
   "keywords": [
     "react",
