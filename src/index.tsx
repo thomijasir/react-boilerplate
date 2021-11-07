@@ -7,9 +7,11 @@ import STORE from './utils/Store';
 import HELPER from './utils/Helper';
 import APP_ROUTER from './services/Router';
 import translations from './constants/translations';
+import withClearCache from './cache';
 import './assets/app.scss';
 
-class Main extends Component {
+interface Props {}
+class Main extends Component<Props> {
   state = {
     appReady: true,
   };
@@ -31,13 +33,14 @@ class Main extends Component {
   }
 }
 
+// State Props Redux
 const mapStateToProps = (state: any) => ({
   isLoading: state.general.isLoading,
 });
-
 const mapActionToProps = {};
 const MainContent = connect(mapStateToProps, mapActionToProps)(Main);
 
+// Wrapping Provide Component
 const App = () => (
   <Provider store={STORE}>
     <IntlProvider
@@ -50,4 +53,7 @@ const App = () => (
   </Provider>
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// Clear Component
+const ClearCacheComponent = withClearCache(App);
+
+ReactDOM.render(<ClearCacheComponent />, document.getElementById('root'));

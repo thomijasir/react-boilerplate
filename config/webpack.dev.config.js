@@ -9,6 +9,7 @@ module.exports = {
   entry: [paths.appIndexJs],
   mode: 'development',
   output: {
+    publicPath: 'auto',
     path: path.resolve(__dirname, '/dist'),
     filename: 'bundle.js',
   },
