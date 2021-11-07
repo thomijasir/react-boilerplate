@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider, connect } from 'react-redux';
+import STORE from './utils/Store';
 import HELPER from './utils/Helper';
 import APP_ROUTER from './services/Router';
 import translations from './constants/translations';
@@ -29,14 +31,23 @@ class Main extends Component {
   }
 }
 
+const mapStateToProps = (state: any) => ({
+  isLoading: state.general.isLoading,
+});
+
+const mapActionToProps = {};
+const MainContent = connect(mapStateToProps, mapActionToProps)(Main);
+
 const App = () => (
-  <IntlProvider
-    defaultLocale="en"
-    locale={HELPER.getLang()}
-    messages={translations[HELPER.getLang()]}
-  >
-    <Main />
-  </IntlProvider>
+  <Provider store={STORE}>
+    <IntlProvider
+      defaultLocale="en"
+      locale={HELPER.getLang()}
+      messages={translations[HELPER.getLang()]}
+    >
+      <MainContent />
+    </IntlProvider>
+  </Provider>
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));

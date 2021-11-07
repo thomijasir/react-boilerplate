@@ -1,26 +1,22 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
-// import { IntlShape } from 'react-intl';
 // import toJson from 'enzyme-to-json';
 // import HomeContainer from './Home.container';
-// import HomePage from './Home.page';
+// import HomePage, { Props } from './Home.page';
 
-// interface Props {
-//   intl: IntlShape;
-// }
-
-// const props = {
-//   intl: {},
+// const defaultProps = {
+//   intl: { formatMessage: jest.fn() },
 // };
+
 // let wrapper;
 // let instance;
 
 // beforeEach(() => {
-//   const sHomePage = <HomePage {...props} />;
+//   const sHomePage = <HomePage {...defaultProps} />;
 //   wrapper = shallow<Props>(sHomePage, {
 //     disableLifecycleMethods: false,
 //   });
-//   // instance = wrapper.instance();
+// instance = wrapper.instance();
 // });
 
 // afterEach(() => {

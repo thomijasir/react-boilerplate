@@ -5,7 +5,7 @@ import reactLogo from '../../assets/images/react.svg';
 import text from './Home.translation';
 import './Home.scss';
 
-interface Props {
+export interface Props {
   intl: IntlShape;
 }
 class Home extends Component<Props> {
