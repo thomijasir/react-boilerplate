@@ -1,4 +1,4 @@
-const getLang = () => {
+const getLang = (): 'en' | 'id' => {
   switch (window.navigator.language.split('-')[0]) {
     case 'en':
       return 'en';

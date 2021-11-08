@@ -11,7 +11,8 @@ import withClearCache from './cache';
 import './assets/app.scss';
 
 interface Props {}
-class Main extends Component<Props> {
+interface State {}
+class Main extends Component<Props, State> {
   state = {
     appReady: true,
   };
@@ -40,7 +41,7 @@ const mapStateToProps = (state: any) => ({
 const mapActionToProps = {};
 const MainContent = connect(mapStateToProps, mapActionToProps)(Main);
 
-// Wrapping Provide Component
+// Wrapping Provider Component
 const App = () => (
   <Provider store={STORE}>
     <IntlProvider

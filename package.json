@@ -43,7 +43,8 @@
     "dev:preprod": "cp .env-preprod.env .env && npm run dev",
     "test:coverage": "jest --config=jest.config.json --coverage",
     "test:view": "jest --config=jest.config.json --coverage && open coverage/lcov-report/index.html",
-    "test:open": "open coverage/lcov-report/index.html"
+    "test:open": "open coverage/lcov-report/index.html",
+    "prepare": "husky install"
   },
   "keywords": [
     "react",
@@ -71,6 +72,8 @@
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
+    "@commitlint/cli": "^14.1.0",
+    "@commitlint/config-conventional": "^14.1.0",
     "@formatjs/ts-transformer": "^3.6.0",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
@@ -99,19 +102,20 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^10.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
     "jest": "^27.3.1",
     "jest-canvas-mock": "^2.3.1",
     "jest-watch-typeahead": "^1.0.0",
     "node-sass": "^6.0.1",
     "prettier": "2.4.1",
     "sass-loader": "^12.3.0",
+    "source-map-explorer": "^2.5.2",
     "style-loader": "^3.3.1",
     "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.4.0",
-    "source-map-explorer": "^2.5.2"
+    "webpack-dev-server": "^4.4.0"
   }
 }
