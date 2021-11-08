@@ -7,6 +7,9 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../redux/reducers';
+
+type storeData = Store<EmptyObject, any>;
+
 const initialState = {};
 
 const middleware = [thunk];
@@ -31,8 +34,6 @@ export const saveState = (state: any) => {
     // Ignore write errors;
   }
 };
-
-type storeData = Store<EmptyObject, any>;
 
 export const getStore = () => {
   let mainStore: storeData;

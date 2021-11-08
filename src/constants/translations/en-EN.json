@@ -1,5 +1,5 @@
 {
   "app.name": "React Boilerplate",
   "app.desc": "This template project was designed for easy scalability apps.",
-  "app.info": "Architecture by Thomi Jasir'"
+  "app.info": "Architecture by {name}"
 }

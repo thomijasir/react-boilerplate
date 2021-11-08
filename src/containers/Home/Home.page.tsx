@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { IntlShape } from 'react-intl';
 import { TITLE_HOME_PAGE } from '../../constants';
+import { Person } from '../../interfaces/Person';
 import reactLogo from '../../assets/images/react.svg';
 import text from './Home.translation';
 import './Home.scss';
@@ -8,9 +8,19 @@ import './Home.scss';
 export interface Props {
   intl: any;
 }
-class Home extends Component<Props> {
+
+export interface State {
+  title: String;
+  person: Person;
+}
+class Home extends Component<Props, State> {
   state = {
     title: 'React Boilerplate',
+    person: {
+      name: 'Thomi Jasir',
+      age: 22,
+      hobbies: ['Coding', 'Fitness'],
+    },
   };
 
   componentDidMount() {
@@ -19,7 +29,7 @@ class Home extends Component<Props> {
   }
 
   render() {
-    const { title } = this.state;
+    const { title, person } = this.state;
     const {
       intl: { formatMessage },
     } = this.props;
@@ -31,7 +41,7 @@ class Home extends Component<Props> {
               <img src={reactLogo} className="rotate" alt="react-logo" />
               <h1>{title}</h1>
               <p>{formatMessage(text.desc)}</p>
-              <small>{formatMessage(text.info)}</small>
+              <small>{formatMessage(text.info, { name: person.name })}</small>
             </div>
           </div>
         </div>
