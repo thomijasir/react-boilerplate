@@ -1,43 +1,42 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
-// import toJson from 'enzyme-to-json';
-// import HomeContainer from './Home.container';
-// import HomePage, { Props } from './Home.page';
+import React from 'react';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+import HomeContainer from './Home.container';
+import HomePage, { Props } from './Home.page';
 
-// const defaultProps = {
-//   intl: { formatMessage: jest.fn() },
-// };
+const defaultProps: Props = {
+  intl: {
+    formatMessage: jest.fn(),
+  },
+};
 
-// let wrapper;
+let wrapper: any;
 // let instance;
 
-// beforeEach(() => {
-//   const sHomePage = <HomePage {...defaultProps} />;
-//   wrapper = shallow<Props>(sHomePage, {
-//     disableLifecycleMethods: false,
-//   });
-// instance = wrapper.instance();
-// });
+beforeEach(() => {
+  wrapper = shallow<Props>(<HomePage {...defaultProps} />, {
+    disableLifecycleMethods: false,
+  });
+  // instance = wrapper.instance();
+});
 
-// afterEach(() => {
-//   jest.clearAllMocks();
-// });
+afterEach(() => {
+  jest.clearAllMocks();
+});
 
-// describe('Home Page Snap Test', () => {
-//   describe('render()', () => {
-//     test('renders the component', () => {
-//       wrapper = shallow(<HomePage {...props} />);
-//       expect(toJson(wrapper)).toMatchSnapshot();
-//     });
-//   });
-// });
+describe('Home Page Snap Test', () => {
+  describe('render()', () => {
+    test('renders the home page', () => {
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+  });
+});
 
-// describe('Home Container Snap Test', () => {
-//   describe('render()', () => {
-//     test('renders the component', () => {
-//       const cWrapper = shallow(<HomeContainer />).dive();
-//       // const cWrapper = shallow(<HomeContainer />);
-//       expect(toJson(cWrapper)).toMatchSnapshot();
-//     });
-//   });
-// });
+describe('Home Container Snap Test', () => {
+  describe('render()', () => {
+    test('renders the home container', () => {
+      const cWrapper = shallow(<HomeContainer {...defaultProps} />);
+      expect(toJson(cWrapper)).toMatchSnapshot();
+    });
+  });
+});

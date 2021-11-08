@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { IntlShape } from 'react-intl';
+// import { IntlShape } from 'react-intl';
 import { TITLE_HOME_PAGE } from '../../constants';
 import reactLogo from '../../assets/images/react.svg';
 import text from './Home.translation';
 import './Home.scss';
 
 export interface Props {
-  intl: IntlShape;
+  intl: any;
 }
 class Home extends Component<Props> {
   state = {

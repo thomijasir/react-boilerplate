@@ -32,11 +32,10 @@ export const saveState = (state: any) => {
   }
 };
 
+type storeData = Store<EmptyObject, any>;
+
 export const getStore = () => {
-  let mainStore:
-    | Store<EmptyObject & { general: { isLoading: any } }, any> & {
-        dispatch: unknown;
-      };
+  let mainStore: storeData;
 
   mainStore = createStore(
     rootReducer,
@@ -59,7 +58,6 @@ export const getStore = () => {
   return mainStore;
 };
 
-// eslint-disable-next-line no-redeclare
-const Store = getStore();
+const storing: storeData = getStore();
 
-export default Store;
+export default storing;
