@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "node-version": "16.13.0",
   "description": "react-boilerplate by thomi jasir",
   "main": "index.js",
@@ -31,6 +31,8 @@
     "clean": "rm -rf build/*",
     "format": "prettier --write \"{,!(node_modules)/**/}*.js\"",
     "analyze": "source-map-explorer dist/*.js",
+    "prepare": "husky install",
+    "release": "standard-version",
     "lint:fix": "eslint src --ext .js --ext .jsx --ext .ts --ext .tsx --fix",
     "web:build": "webpack --mode=development",
     "web:watch": "webpack -w",
@@ -44,7 +46,9 @@
     "test:coverage": "jest --config=jest.config.json --coverage",
     "test:view": "jest --config=jest.config.json --coverage && open coverage/lcov-report/index.html",
     "test:open": "open coverage/lcov-report/index.html",
-    "prepare": "husky install"
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
   },
   "keywords": [
     "react",
@@ -110,6 +114,7 @@
     "prettier": "2.4.1",
     "sass-loader": "^12.3.0",
     "source-map-explorer": "^2.5.2",
+    "standard-version": "^9.3.2",
     "style-loader": "^3.3.1",
     "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
