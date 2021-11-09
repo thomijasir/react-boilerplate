@@ -1,3 +1,4 @@
+import 'react-app-polyfill/stable';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { IntlProvider } from 'react-intl';

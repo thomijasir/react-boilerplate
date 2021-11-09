@@ -16,7 +16,7 @@ function withClearCache(Component) {
     const [isLatestBuildDate, setIsLatestBuildDate] = useState(false);
 
     useEffect(() => {
-      fetch('/meta.json')
+      fetch('meta.json')
         .then((response) => response.json())
         .then((meta) => {
           const latestVersionDate = meta.buildDate;
@@ -37,7 +37,6 @@ function withClearCache(Component) {
 
     const refreshCacheAndReload = () => {
       if (caches) {
-        // Service worker cache should be cleared with caches.delete()
         caches.keys().then((names) => {
           names.forEach((name) => {
             caches.delete(name);
