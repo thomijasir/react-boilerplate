@@ -107,5 +107,12 @@ module.exports = {
       favicon: paths.appFavicon,
       inject: true,
     }),
+    {
+      apply: (compiler) => {
+        compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
+          console.log('Build successfully..');
+        });
+      },
+    },
   ],
 };
